@@ -1,0 +1,18 @@
+.footer {
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    background-color: #dddddd;
+    height: 7vh;
+
+    span {
+        font-weight: 300;
+        font-size: .9rem;
+    }
+
+    .red {
+        color: red;
+        vertical-align: middle;
+    }
+}
