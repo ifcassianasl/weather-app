@@ -1,3 +1,5 @@
+import { WeatherService } from './../../weather.service';
+import { API_ACCESS_KEY } from './../../../../environments/environment';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavComponent implements OnInit {
 
-  constructor() { }
+  cityName: string = '';
 
-  ngOnInit(): void {
+  constructor(private weatherService: WeatherService) { }
+
+  ngOnInit(): void { }
+
+  getCityWeather(): void {
+    this.weatherService.getApiCityWeather(API_ACCESS_KEY, this.cityName).subscribe(result => {
+      console.log(result)
+    });
   }
-
 }

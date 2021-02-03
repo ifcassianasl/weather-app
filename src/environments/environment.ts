@@ -6,6 +6,8 @@ export const environment = {
   production: false
 };
 
+export const API_ACCESS_KEY = '623aa060c66b567d096d1c1d633b275c';
+
 /*
  * For easier debugging in development mode, you can import the following file
  * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.

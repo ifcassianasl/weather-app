@@ -1,1 +1,14 @@
-<div>All content</div>
+<mat-card class="content">
+    <form>
+        <mat-form-field>
+            <input matInput placeholder="Cidade" [(ngModel)]="cityName" name="city">
+        </mat-form-field>
+    </form>
+
+    <button mat-raised-button (click)="getCityWeather()" color="primary">
+        Procurar
+        <i class="material-icons">
+            search
+        </i>
+    </button>
+</mat-card>
