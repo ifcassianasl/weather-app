@@ -5,9 +5,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FooterComponent } from './components/template/footer/footer.component';
 import { NavComponent } from './components/template/nav/nav.component';
+import { HeaderComponent } from './components/template/header/header.component';
 
 
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatSidenavModule } from '@angular/material/sidenav'
 import { MatInputModule } from "@angular/material/input";
 import { MatCardModule } from '@angular/material/card';
@@ -16,7 +18,6 @@ import { FormsModule } from "@angular/forms";
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
-import { HeaderComponent } from './components/template/header/header.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { HeaderComponent } from './components/template/header/header.component';
     FormsModule,
     MatFormFieldModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatTooltipModule
   ],
   providers: [],
   bootstrap: [AppComponent]

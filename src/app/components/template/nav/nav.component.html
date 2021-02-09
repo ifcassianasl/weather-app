@@ -1,14 +1,48 @@
 <mat-card class="content">
-    <form>
-        <mat-form-field>
-            <input matInput placeholder="Cidade" [(ngModel)]="cityName" name="city">
-        </mat-form-field>
-    </form>
+    <div class="form-content">
+        <form>
+            <mat-form-field>
+                <input matInput placeholder="City" [(ngModel)]="cityName" name="city">
+            </mat-form-field>
+        </form>
 
-    <button mat-raised-button (click)="getCityWeather()" color="primary">
-        Procurar
-        <i class="material-icons">
-            search
-        </i>
-    </button>
+        <button mat-raised-button (click)="getCityWeather()" color="primary">
+            Search
+            <i class="material-icons">
+                search
+            </i>
+        </button>
+    </div>
+
+    <div *ngIf="weatherFlag" class="weather-content">
+        <mat-card id="weatherDescriptions"  class="weather-item mat-elevation-z3" matTooltip="Weather descriptions" matTooltipPosition="above">
+            <mat-card-content *ngFor="let description of currentWeather.descriptions">
+                {{description}}
+            </mat-card-content>
+        </mat-card>
+        <mat-card id="temperature" class="weather-item mat-elevation-z3" matTooltip="Temperature" matTooltipPosition="above">
+            <mat-card-content>
+                <i class="material-icons">thermostat</i>
+                {{ currentWeather.temperature }}°
+            </mat-card-content>
+        </mat-card>
+        <mat-card id="humidity" class="weather-item mat-elevation-z3" matTooltip="Humidity" matTooltipPosition="above">
+            <mat-card-content>
+                <i class="material-icons">opacity</i>
+                {{ currentWeather.humidity }}%
+            </mat-card-content>
+        </mat-card>
+        <mat-card id="precipitation" class="weather-item mat-elevation-z3" matTooltip="Precipitation" matTooltipPosition="above">
+            <mat-card-content>
+                <i class="material-icons">umbrella</i>
+                {{ currentWeather.precipitation }}%
+            </mat-card-content>
+        </mat-card>
+        <mat-card id="wind-speed" class="weather-item mat-elevation-z3" matTooltip="Wind speed" matTooltipPosition="above">
+            <mat-card-content>
+                <i class="material-icons">air</i>
+                {{ currentWeather.windSpeed }}Km/H
+            </mat-card-content>
+        </mat-card>
+    </div>
 </mat-card>
